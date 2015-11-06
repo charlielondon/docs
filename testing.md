@@ -291,6 +291,11 @@ If you are making `POST`, `PUT`, or `PATCH` requests you may pass an array of in
 
        $response = $this->call('POST', '/user', ['name' => 'Taylor']);
 
+If you are sending custom headers in a request, you can attach these headers via the `$server` array and using the prefix `HTTP_` like so:
+
+       $server = ['HTTP_My_Custom_Header' => 'header_content'];
+       $response = $this->call('POST', '/', [], [], [], $server)
+
 <a name="working-with-databases"></a>
 ## Working With Databases
 
